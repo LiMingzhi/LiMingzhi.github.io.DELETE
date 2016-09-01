@@ -109,7 +109,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/工具资源/" style="font-size: 10px;">工具资源</a>
+						<a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/后端/" style="font-size: 20px;">后端</a> <a href="/tags/工具资源/" style="font-size: 20px;">工具资源</a>
 					</div>
 				</section>
 				
@@ -220,7 +220,7 @@
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/SonarQube/">SonarQube</a>
+	<a class="article-category-link" href="/categories/SonarQube/">SonarQube</a><a class="article-category-link" href="/categories/SonarQube/MSBuild/">MSBuild</a>
 	</div>
 
 
@@ -271,15 +271,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database databaseName;</div></pre></td></tr></table></figure>
-<h3 id="使用指定数据库"><a href="#使用指定数据库" class="headerlink" title="使用指定数据库"></a>使用指定数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">use databaseName;</div></pre></td></tr></table></figure>
-<h3 id="显示全部数据库"><a href="#显示全部数据库" class="headerlink" title="显示全部数据库"></a>显示全部数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show databases;</div></pre></td></tr></table></figure>
-<h3 id="显示全部数据库表"><a href="#显示全部数据库表" class="headerlink" title="显示全部数据库表"></a>显示全部数据库表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show tables;</div></pre></td></tr></table></figure>
-<h3 id="查看指定数据库表的列信息"><a href="#查看指定数据库表的列信息" class="headerlink" title="查看指定数据库表的列信息"></a>查看指定数据库表的列信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">desc tablename;</div></pre></td></tr></table></figure>
-<h3 id="显示指定数据库表创建的sql的语句"><a href="#显示指定数据库表创建的sql的语句" class="headerlink" title="显示指定数据库表创建的sql的语句"></a>显示指定数据库表创建的sql的语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show create table tableName;</div></pre></td></tr></table></figure>
-<h3 id="显示指定数据库表的信息"><a href="#显示指定数据库表的信息" class="headerlink" title="显示指定数据库表的信息"></a>显示指定数据库表的信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from TABLES <span class="built_in">where</span> TABLE_SCHEMA = <span class="string">'dbName'</span> and TABLE_NAME = <span class="string">'tableName'</span>;</div></pre></td></tr></table></figure>
-<h3 id="创建数据库表-1"><a href="#创建数据库表-1" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">create table tableName (</div><div class="line">	字段名 类型  auto_increment primary key comment <span class="string">'注释'</span>,</div><div class="line">	....</div><div class="line">)engine = <span class="string">'引擎'</span> default charset = <span class="string">'编码'</span> comment <span class="string">'表注释'</span>；</div></pre></td></tr></table></figure>
-
+        <h3 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">database</span> databaseName;</div></pre></td></tr></table></figure>
+<h3 id="使用指定数据库"><a href="#使用指定数据库" class="headerlink" title="使用指定数据库"></a>使用指定数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> databaseName;</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -296,6 +289,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/08/mysql/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -339,16 +336,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
       
     </div>
     
@@ -356,15 +345,19 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具资源/">工具资源</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具资源/">工具资源</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+	<a class="article-category-link" href="/categories/Hexo/">Hexo</a><a class="article-category-link" href="/categories/Hexo/Github/">Github</a>
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/12/hexo/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

@@ -7,33 +7,18 @@
   <title>Mysql | Mickey&#39;s Club</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="创建数据库表1create database databaseName;
-使用指定数据库1use databaseName;
-显示全部数据库1show databases;
-显示全部数据库表1show tables;
-查看指定数据库表的列信息1desc tablename;
-显示指定数据库表创建的sql的语句1show create table tableName;
-显示指定数据库表的信息1sel">
+使用指定数据库1use databaseName;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql">
 <meta property="og:url" content="http://charmcore.com/2016/08/08/mysql/index.html">
 <meta property="og:site_name" content="Mickey's Club">
 <meta property="og:description" content="创建数据库表1create database databaseName;
-使用指定数据库1use databaseName;
-显示全部数据库1show databases;
-显示全部数据库表1show tables;
-查看指定数据库表的列信息1desc tablename;
-显示指定数据库表创建的sql的语句1show create table tableName;
-显示指定数据库表的信息1sel">
-<meta property="og:updated_time" content="2016-08-31T11:09:55.259Z">
+使用指定数据库1use databaseName;">
+<meta property="og:updated_time" content="2016-09-01T07:23:24.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql">
 <meta name="twitter:description" content="创建数据库表1create database databaseName;
-使用指定数据库1use databaseName;
-显示全部数据库1show databases;
-显示全部数据库表1show tables;
-查看指定数据库表的列信息1desc tablename;
-显示指定数据库表创建的sql的语句1show create table tableName;
-显示指定数据库表的信息1sel">
+使用指定数据库1use databaseName;">
   
     <link rel="alternative" href="/atom.xml" title="Mickey&#39;s Club" type="application/atom+xml">
   
@@ -128,7 +113,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/后端/" style="font-size: 10px;">后端</a> <a href="/tags/工具资源/" style="font-size: 10px;">工具资源</a>
+						<a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/后端/" style="font-size: 20px;">后端</a> <a href="/tags/工具资源/" style="font-size: 20px;">工具资源</a>
 					</div>
 				</section>
 				
@@ -235,14 +220,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create database databaseName;</div></pre></td></tr></table></figure>
-<h3 id="使用指定数据库"><a href="#使用指定数据库" class="headerlink" title="使用指定数据库"></a>使用指定数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">use databaseName;</div></pre></td></tr></table></figure>
-<h3 id="显示全部数据库"><a href="#显示全部数据库" class="headerlink" title="显示全部数据库"></a>显示全部数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show databases;</div></pre></td></tr></table></figure>
-<h3 id="显示全部数据库表"><a href="#显示全部数据库表" class="headerlink" title="显示全部数据库表"></a>显示全部数据库表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show tables;</div></pre></td></tr></table></figure>
-<h3 id="查看指定数据库表的列信息"><a href="#查看指定数据库表的列信息" class="headerlink" title="查看指定数据库表的列信息"></a>查看指定数据库表的列信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">desc tablename;</div></pre></td></tr></table></figure>
-<h3 id="显示指定数据库表创建的sql的语句"><a href="#显示指定数据库表创建的sql的语句" class="headerlink" title="显示指定数据库表创建的sql的语句"></a>显示指定数据库表创建的sql的语句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show create table tableName;</div></pre></td></tr></table></figure>
-<h3 id="显示指定数据库表的信息"><a href="#显示指定数据库表的信息" class="headerlink" title="显示指定数据库表的信息"></a>显示指定数据库表的信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from TABLES <span class="built_in">where</span> TABLE_SCHEMA = <span class="string">'dbName'</span> and TABLE_NAME = <span class="string">'tableName'</span>;</div></pre></td></tr></table></figure>
-<h3 id="创建数据库表-1"><a href="#创建数据库表-1" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">create table tableName (</div><div class="line">	字段名 类型  auto_increment primary key comment <span class="string">'注释'</span>,</div><div class="line">	....</div><div class="line">)engine = <span class="string">'引擎'</span> default charset = <span class="string">'编码'</span> comment <span class="string">'表注释'</span>；</div></pre></td></tr></table></figure>
+        <h3 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">database</span> databaseName;</div></pre></td></tr></table></figure>
+<h3 id="使用指定数据库"><a href="#使用指定数据库" class="headerlink" title="使用指定数据库"></a>使用指定数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> databaseName;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="显示全部数据库"><a href="#显示全部数据库" class="headerlink" title="显示全部数据库"></a>显示全部数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</div></pre></td></tr></table></figure>
+<h3 id="显示全部数据库表"><a href="#显示全部数据库表" class="headerlink" title="显示全部数据库表"></a>显示全部数据库表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</div></pre></td></tr></table></figure>
+<h3 id="查看指定数据库表的列信息"><a href="#查看指定数据库表的列信息" class="headerlink" title="查看指定数据库表的列信息"></a>查看指定数据库表的列信息</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">desc tablename;</div></pre></td></tr></table></figure>
+<h3 id="显示指定数据库表创建的sql的语句"><a href="#显示指定数据库表创建的sql的语句" class="headerlink" title="显示指定数据库表创建的sql的语句"></a>显示指定数据库表创建的sql的语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tableName;</div></pre></td></tr></table></figure>
+<h3 id="显示指定数据库表的信息"><a href="#显示指定数据库表的信息" class="headerlink" title="显示指定数据库表的信息"></a>显示指定数据库表的信息</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">TABLES</span> <span class="keyword">where</span> TABLE_SCHEMA = <span class="string">'dbName'</span> <span class="keyword">and</span> TABLE_NAME = <span class="string">'tableName'</span>;</div></pre></td></tr></table></figure>
+<h3 id="创建数据库表-1"><a href="#创建数据库表-1" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> tableName (</div><div class="line">	字段名 类型  auto_increment primary <span class="keyword">key</span> <span class="keyword">comment</span> <span class="string">'注释'</span>,</div><div class="line">	....</div><div class="line">)<span class="keyword">engine</span> = <span class="string">'引擎'</span> <span class="keyword">default</span> <span class="keyword">charset</span> = <span class="string">'编码'</span> <span class="keyword">comment</span> <span class="string">'表注释'</span>；</div></pre></td></tr></table></figure>
 
       
     </div>
