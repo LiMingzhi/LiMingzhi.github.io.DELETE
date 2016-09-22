@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mickey&#39;s Club</title>
+  <subtitle>Mickey&#39;s Club</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://charmcore.com/"/>
+  <updated>2016-09-22T09:33:19.673Z</updated>
+  <id>http://charmcore.com/</id>
+  
+  <author>
+    <name>Mickey</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用</title>
+    <link href="http://charmcore.com/2016/09/22/jenkins_1/"/>
+    <id>http://charmcore.com/2016/09/22/jenkins_1/</id>
+    <published>2016-09-22T04:12:12.000Z</published>
+    <updated>2016-09-22T09:33:19.673Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、准备篇"><a href="#一、准备篇" class="headerlink" title="一、准备篇"></a>一、准备篇</h1><ul>
+<li>下载<a href="https://jenkins.io/" title="Jenkins" target="_blank" rel="external">Jenkins</a></li>
+<li>下载<a href="https://git-scm.com/" title="Git" target="_blank" rel="external">Git</a></li>
+<li>注册<a href="https://github.com/" title="GitHub" target="_blank" rel="external">GitHub</a></li>
+<li>下载<a href="http://www.sonarqube.org/downloads/" title="SonarQube" target="_blank" rel="external">SonarQube</a></li>
+<li>下载<a href="http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild/" title="SonarQube Scanner for MSBuild" target="_blank" rel="external">Analyzing with SonarQube Scanner for MSBuild</a></li>
+<li>下载<a href="https://www.mysql.com/" title="Mysql" target="_blank" rel="external">Mysql</a><a id="more"></a>
+</li>
+</ul>
+<h1 id="二、安装篇"><a href="#二、安装篇" class="headerlink" title="二、安装篇"></a>二、安装篇</h1><h2 id="安装Jenkins-http-localhost-8080"><a href="#安装Jenkins-http-localhost-8080" class="headerlink" title="安装Jenkins(http://localhost:8080)"></a>安装Jenkins(<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>)</h2><ol>
+<li>执行jenkins.msi(D:\Jenkins)</li>
+</ol>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><ol>
+<li>执行Git-2.10.0-64-bit.exe(D:\Git)</li>
+<li>配置环境变量(右键此电脑-属性-高级系统设置-环境变量)</li>
+<li>如图配置<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-0.png" alt="Alt text" title="Git环境变量配置"></li>
+</ol>
+<h1 id="三、配置篇"><a href="#三、配置篇" class="headerlink" title="三、配置篇"></a>三、配置篇</h1><h2 id="配置Jenkins服务"><a href="#配置Jenkins服务" class="headerlink" title="配置Jenkins服务"></a>配置Jenkins服务</h2><ol>
+<li>配置Jenkins服务以管理员身份登陆</li>
+</ol>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><ol>
+<li><strong>系统管理</strong>-&gt;<strong>管理插件</strong>-&gt;<strong>查找</strong>(GitHub plugin、Git plugin、SBuild Plugin、SonarQube Plugin等)</li>
+<li>安装失败可以手动下载文件(.hpi)<strong>系统管理</strong>-&gt;<strong>管理插件</strong>-&gt;<strong>高级</strong>-&gt;<strong>上传插件</strong></li>
+</ol>
+<h2 id="配置SonarQube、Git、GitHub和MSBuild"><a href="#配置SonarQube、Git、GitHub和MSBuild" class="headerlink" title="配置SonarQube、Git、GitHub和MSBuild"></a>配置SonarQube、Git、GitHub和MSBuild</h2><ol>
+<li><strong>系统管理</strong>-&gt;<strong>系统设置</strong></li>
+<li><strong>SonarQube servers</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-1.png" alt="Alt text" title="SonarQube servers配置"></li>
+<li><strong>JDK</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-2.png" alt="Alt text" title="JDK配置"></li>
+<li><strong>Git</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-3.png" alt="Alt text" title="Git配置"></li>
+<li><strong>MSBuild</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-4.png" alt="Alt text" title="MSBuild配置"></li>
+<li><strong>SonarQube Scanner for MSBuild</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-5.png" alt="Alt text" title="SonarQube Scanner for MSBuild配置"></li>
+<li><strong>Jenkins Location</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-6.png" alt="Alt text" title="Jenkins Location配置"></li>
+</ol>
+<h1 id="四、使用篇"><a href="#四、使用篇" class="headerlink" title="四、使用篇"></a>四、使用篇</h1><h2 id="构建项目"><a href="#构建项目" class="headerlink" title="构建项目"></a>构建项目</h2><ol>
+<li>创建项目<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-7.png" alt="Alt text" title="创建项目"></li>
+<li><strong>源码管理</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-8.png" alt="Alt text" title="源码管理配置"></li>
+<li><strong>构建触发器</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-9.png" alt="Alt text" title="构建触发器配置"></li>
+<li><strong>构建</strong>(添加构建步骤-&gt;Build a Visual Studio project or solution using MSBuild)<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-10.png" alt="Alt text" title="构建配置"></li>
+<li>保存-&gt;构建</li>
+</ol>
+<hr>
+<table>
+<thead>
+<tr>
+<th>微信公众号</th>
+<th>版权声明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="http://ocr8mp6cx.bkt.clouddn.com/CharmCorewechatadmin%20platform.jpg" alt="Alt text"></td>
+<td>作者：李明智(Mickey)<br>微信公众号：LOVING-SKY-SMILE<br>著作权归作者所有，转载请联系作者获得授权，但未经作者同意必须保留此段声明，且在文章明显位置给出原文链接，否则保留追究法律责任的权利。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、准备篇&quot;&gt;&lt;a href=&quot;#一、准备篇&quot; class=&quot;headerlink&quot; title=&quot;一、准备篇&quot;&gt;&lt;/a&gt;一、准备篇&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://jenkins.io/&quot; title=&quot;Jenkins&quot;&gt;Jenkins&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://git-scm.com/&quot; title=&quot;Git&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;注册&lt;a href=&quot;https://github.com/&quot; title=&quot;GitHub&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;http://www.sonarqube.org/downloads/&quot; title=&quot;SonarQube&quot;&gt;SonarQube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild/&quot; title=&quot;SonarQube Scanner for MSBuild&quot;&gt;Analyzing with SonarQube Scanner for MSBuild&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://www.mysql.com/&quot; title=&quot;Mysql&quot;&gt;Mysql&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="工具资源" scheme="http://charmcore.com/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="后端" scheme="http://charmcore.com/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="SonarQube" scheme="http://charmcore.com/tags/SonarQube/"/>
+    
+      <category term="MSBuild" scheme="http://charmcore.com/tags/MSBuild/"/>
+    
+      <category term="Git" scheme="http://charmcore.com/tags/Git/"/>
+    
+      <category term="GitHub" scheme="http://charmcore.com/tags/GitHub/"/>
+    
+      <category term="SonarQube Scanner for MSBuild" scheme="http://charmcore.com/tags/SonarQube-Scanner-for-MSBuild/"/>
+    
+      <category term=".Net" scheme="http://charmcore.com/tags/Net/"/>
+    
+      <category term="单元测试" scheme="http://charmcore.com/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SonarQube安装、配置与使用</title>
+    <link href="http://charmcore.com/2016/09/01/sonarqube_1/"/>
+    <id>http://charmcore.com/2016/09/01/sonarqube_1/</id>
+    <published>2016-09-01T04:12:12.000Z</published>
+    <updated>2016-09-22T09:41:12.678Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、准备工作"><a href="#一、准备工作" class="headerlink" title="一、准备工作"></a>一、准备工作</h1><ul>
+<li>下载<a href="http://www.oracle.com/" title="Java" target="_blank" rel="external">JDK</a></li>
+<li>下载<a href="http://www.sonarqube.org/downloads/" title="SonarQube" target="_blank" rel="external">SonarQube</a></li>
+<li>下载<a href="http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild/" title="SonarQube Scanner for MSBuild" target="_blank" rel="external">Analyzing with SonarQube Scanner for MSBuild</a></li>
+<li>下载<a href="https://www.mysql.com/" title="Mysql" target="_blank" rel="external">Mysql</a><a id="more"></a>
+</li>
+</ul>
+<h1 id="二、安装篇"><a href="#二、安装篇" class="headerlink" title="二、安装篇"></a>二、安装篇</h1><h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><ol>
+<li>执行MySQL语句<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> sonar <span class="built_in">CHARACTER</span> <span class="keyword">SET</span> utf8 <span class="keyword">COLLATE</span> utf8_general_ci;</div><div class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'sonar'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</div><div class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">ON</span> sonar.* <span class="keyword">TO</span> <span class="string">'sonar'</span>@<span class="string">'%'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</div><div class="line"><span class="keyword">GRANT</span> ALL <span class="keyword">ON</span> sonar.* <span class="keyword">TO</span> <span class="string">'sonar'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'sonar'</span>;</div><div class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="搭建JAVA环境"><a href="#搭建JAVA环境" class="headerlink" title="搭建JAVA环境"></a>搭建JAVA环境</h2><ol>
+<li>安装JDK(D:\Java)</li>
+<li>配置环境变量(右键此电脑-属性-高级系统设置-环境变量)</li>
+<li>如图配置(配置Path环境变量在安装SonarQubeScannerforMSBuild时说明)<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcessonarqube-1.png" alt="Alt text" title="Java环境变量配置"></li>
+</ol>
+<h2 id="安装SonarQube-http-localhost-9000"><a href="#安装SonarQube-http-localhost-9000" class="headerlink" title="安装SonarQube(http://localhost:9000)"></a>安装SonarQube(<a href="http://localhost:9000" target="_blank" rel="external">http://localhost:9000</a>)</h2><ol>
+<li>解压SonarQube到目录(D:\SonarQube\sonarqube-6.0)</li>
+<li>配置环境变量(右键此电脑-属性-高级系统设置-环境变量)</li>
+<li>如图配置(配置Path环境变量在安装SonarQubeScannerforMSBuild时说明)<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcessonarqube-2.png" alt="Alt text" title="SonarQube环境变量配置"></li>
+</ol>
+<h2 id="安装SonarQube-Scanner-for-MSBuild"><a href="#安装SonarQube-Scanner-for-MSBuild" class="headerlink" title="安装SonarQube Scanner for MSBuild"></a>安装SonarQube Scanner for MSBuild</h2><ol>
+<li>解压SonarQube到目录(D:\SonarQube\SonarQubeScannerforMSBuild-2.1)</li>
+<li>配置环境变量(右键此电脑-属性-高级系统设置-环境变量)</li>
+<li>如图配置(配置Path环境变量在安装SonarQubeScannerforMSBuild时说明)<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcessonarqube-3.png" alt="Alt text" title="SonarQube Scanner for MSBuild环境变量配置"></li>
+<li>配置Path环境变量<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcessonarqube-4.png" alt="Alt text" title="Path配置环境变量"></li>
+</ol>
+<h1 id="三、配置篇"><a href="#三、配置篇" class="headerlink" title="三、配置篇"></a>三、配置篇</h1><h2 id="配置SonarQube"><a href="#配置SonarQube" class="headerlink" title="配置SonarQube"></a>配置SonarQube</h2><ol>
+<li><p>修改配置文件(D:\SonarQube\sonarqube-6.0\conf\sonar.properties)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line"># Property values can:</div><div class="line"># - reference an environment variable, for example sonar.jdbc.url= $&#123;env:SONAR_JDBC_URL&#125;</div><div class="line"># - be encrypted. See http://redirect.sonarsource.com/doc/settings-encryption.html</div><div class="line"></div><div class="line">#--------------------------------------------------------------------------------------------------</div><div class="line"># DATABASE</div><div class="line">#</div><div class="line"># IMPORTANT: the embedded H2 database is used by default. It is recommended for tests but not for</div><div class="line"># production use. Supported databases are MySQL, Oracle, PostgreSQL and Microsoft SQLServer.</div><div class="line"></div><div class="line"># User credentials.</div><div class="line"># Permissions to create tables, indices and triggers must be granted to JDBC user.</div><div class="line"># The schema must be created first.</div><div class="line">sonar.jdbc.username=root</div><div class="line">sonar.jdbc.password=root</div><div class="line"></div><div class="line"></div><div class="line">#----- MySQL 5.x</div><div class="line"># Only InnoDB storage engine is supported (not myISAM).</div><div class="line"># Only the bundled driver is supported. It can not be changed.</div><div class="line">sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</div><div class="line"></div><div class="line"></div><div class="line">#----- Connection pool settings</div><div class="line"># The maximum number of active connections that can be allocated</div><div class="line"># at the same time, or negative for no limit.</div><div class="line"># The recommended value is 1.2 * max sizes of HTTP/HTTPS pools. For example if both HTTP and</div><div class="line"># HTTPS ports are enabled with default sizes (50, see properties sonar.web.http.maxThreads</div><div class="line"># and sonar.web.https.maxThreads) then sonar.jdbc.maxActive should be 1.2 * (50 + 50) = 120.</div><div class="line">sonar.jdbc.maxActive=60</div><div class="line"></div><div class="line"># The maximum number of connections that can remain idle in the</div><div class="line"># pool, without extra ones being released, or negative for no limit.</div><div class="line">sonar.jdbc.maxIdle=5</div><div class="line"></div><div class="line"># The minimum number of connections that can remain idle in the pool,</div><div class="line"># without extra ones being created, or zero to create none.</div><div class="line">sonar.jdbc.minIdle=2</div><div class="line"></div><div class="line"># The maximum number of milliseconds that the pool will wait (when there</div><div class="line"># are no available connections) for a connection to be returned before</div><div class="line"># throwing an exception, or &lt;= 0 to wait indefinitely.</div><div class="line">sonar.jdbc.maxWait=5000</div><div class="line"></div><div class="line">sonar.jdbc.minEvictableIdleTimeMillis=600000</div><div class="line">sonar.jdbc.timeBetweenEvictionRunsMillis=30000</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#--------------------------------------------------------------------------------------------------</div><div class="line"># WEB SERVER</div><div class="line"></div><div class="line"># Web server is executed in a dedicated Java process. By default heap size is 768Mb.</div><div class="line"># Use the following property to customize JVM options.</div><div class="line">#    Recommendations:</div><div class="line">#</div><div class="line">#    The HotSpot Server VM is recommended. The property -server should be added if server mode</div><div class="line">#    is not enabled by default on your environment: http://docs.oracle.com/javase/7/docs/technotes/guides/vm/server-class.html</div><div class="line">#</div><div class="line">#sonar.web.javaOpts=-Xmx768m -Xms256m -XX:MaxPermSize=160m -XX:+HeapDumpOnOutOfMemoryError -Djava.net.preferIPv4Stack=true</div><div class="line"></div><div class="line"># Same as previous property, but allows to not repeat all other settings like -Xmx</div><div class="line">#sonar.web.javaAdditionalOpts=</div><div class="line"></div><div class="line"># Binding IP address. For servers with more than one IP address, this property specifies which</div><div class="line"># address will be used for listening on the specified ports.</div><div class="line"># By default, ports will be used on all IP addresses associated with the server.</div><div class="line">sonar.web.host=127.0.0.1</div><div class="line"></div><div class="line"># TCP port for incoming HTTP connections. Disabled when value is -1.</div><div class="line">sonar.web.port=9000</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#--------------------------------------------------------------------------------------------------</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行(D:\SonarQube\sonarqube-6.0\bin\windows-x86-64\StartSonar.bat),打开<a href="http://localhost:9000，如果显示SonarQube主页则安装成功" target="_blank" rel="external">http://localhost:9000，如果显示SonarQube主页则安装成功</a></p>
+</li>
+<li>安装插件<a href="http://docs.sonarqube.org/display/PLUG/Plugin+Library" title="SonarQube" target="_blank" rel="external">SonarQube</a>C# 、Chinese Pack等，插件JAR包放到(D:\SonarQube\sonarqube-6.0\extensions\plugins),重启服务即安装成功</li>
+</ol>
+<h2 id="配置SonarQube-Scanner-for-MSBuild"><a href="#配置SonarQube-Scanner-for-MSBuild" class="headerlink" title="配置SonarQube Scanner for MSBuild"></a>配置SonarQube Scanner for MSBuild</h2><ol>
+<li><p>修改配置文件(D:\SonarQube\SonarQubeScannerforMSBuild-2.1\conf\sonar-runner.properties)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#Configure here general information about the environment, such as SonarQube DB details for example</div><div class="line">#No information about specific project should appear here</div><div class="line"></div><div class="line">#----- Default SonarQube server</div><div class="line">sonar.host.url=http://127.0.0.1:9000</div><div class="line"></div><div class="line">#----- PostgreSQL</div><div class="line">#sonar.jdbc.url=jdbc:postgresql://localhost/sonar</div><div class="line"></div><div class="line">#----- MySQL</div><div class="line">sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;amp;characterEncoding=utf8</div><div class="line"></div><div class="line">#----- Oracle</div><div class="line">#sonar.jdbc.url=jdbc:oracle:thin:@localhost/XE</div><div class="line"></div><div class="line">#----- Microsoft SQLServer</div><div class="line">#sonar.jdbc.url=jdbc:jtds:sqlserver://localhost/sonar;SelectMethod=Cursor</div><div class="line"></div><div class="line">#----- Global database settings</div><div class="line">sonar.jdbc.username=root</div><div class="line">sonar.jdbc.password=root</div><div class="line"></div><div class="line">#----- Default source code encoding</div><div class="line">sonar.sourceEncoding=UTF-8</div><div class="line"></div><div class="line">#----- Security (when &apos;sonar.forceAuthentication&apos; is set to &apos;true&apos;)</div><div class="line">sonar.login=admin</div><div class="line">sonar.password=admin</div></pre></td></tr></table></figure>
+</li>
+<li><p>命令行执行sonar-runner -h验证是否安装成功</p>
+</li>
+</ol>
+<h1 id="四、使用篇"><a href="#四、使用篇" class="headerlink" title="四、使用篇"></a>四、使用篇</h1><h2 id="代码质量检测"><a href="#代码质量检测" class="headerlink" title="代码质量检测"></a>代码质量检测</h2><ol>
+<li>拷贝项目到目录(D:\SonarQube)</li>
+<li><p>添加sonar-project.properties文件到项目目录下(D:\SonarQube\CharmCore\sonar-project.properties),内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># Required metadata</div><div class="line">sonar.projectKey=org.sonarqube:limingzhi</div><div class="line">sonar.projectName=Example of Generic Test Coverage Reports Import ::limingzhi</div><div class="line">sonar.projectDescription=Example of Import of UT Execution Results Report and UT/IT Coverage Report Import</div><div class="line">sonar.projectVersion=1.0</div><div class="line"></div><div class="line"># Comma-separated paths to directories with sources (required)</div><div class="line">sonar.sources=ConsoleApplication</div><div class="line">sonar.tests=UnitTestProject</div><div class="line">sonar.language=cs</div><div class="line"></div><div class="line"># Encoding of the source files</div><div class="line">sonar.sourceEncoding=UTF-8</div><div class="line"></div><div class="line">#sonar.genericcoverage.reportPaths=report/coverage.xml</div><div class="line">#sonar.genericcoverage.itReportPaths=report/itcoverage.xml</div><div class="line">#sonar.genericcoverage.unitTestReportPaths=report/unittest.xml</div></pre></td></tr></table></figure>
+</li>
+<li><p>到项目根目录(D:\SonarQube\CharmCore)，命令行执行sonar-runner分析，当出现SUCCESS时则分析成功</p>
+</li>
+<li>刷新网站(<a href="http://localhost:9000" target="_blank" rel="external">http://localhost:9000</a>)</li>
+</ol>
+<hr>
+<table>
+<thead>
+<tr>
+<th>微信公众号</th>
+<th>版权声明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="http://ocr8mp6cx.bkt.clouddn.com/CharmCorewechatadmin%20platform.jpg" alt="Alt text"></td>
+<td>作者：李明智(Mickey)<br>微信公众号：LOVING-SKY-SMILE<br>著作权归作者所有，转载请联系作者获得授权，但未经作者同意必须保留此段声明，且在文章明显位置给出原文链接，否则保留追究法律责任的权利。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、准备工作&quot;&gt;&lt;a href=&quot;#一、准备工作&quot; class=&quot;headerlink&quot; title=&quot;一、准备工作&quot;&gt;&lt;/a&gt;一、准备工作&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;下载&lt;a href=&quot;http://www.oracle.com/&quot; title=&quot;Java&quot;&gt;JDK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;http://www.sonarqube.org/downloads/&quot; title=&quot;SonarQube&quot;&gt;SonarQube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild/&quot; title=&quot;SonarQube Scanner for MSBuild&quot;&gt;Analyzing with SonarQube Scanner for MSBuild&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://www.mysql.com/&quot; title=&quot;Mysql&quot;&gt;Mysql&lt;/a&gt;
+    
+    </summary>
+    
+      <category term="工具资源" scheme="http://charmcore.com/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="后端" scheme="http://charmcore.com/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="SonarQube" scheme="http://charmcore.com/tags/SonarQube/"/>
+    
+      <category term="MSBuild" scheme="http://charmcore.com/tags/MSBuild/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql</title>
+    <link href="http://charmcore.com/2016/08/08/mysql_1/"/>
+    <id>http://charmcore.com/2016/08/08/mysql_1/</id>
+    <published>2016-08-08T04:12:12.000Z</published>
+    <updated>2016-09-01T07:28:24.956Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="创建数据库表"><a href="#创建数据库表" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">database</span> databaseName;</div></pre></td></tr></table></figure>
+<h3 id="使用指定数据库"><a href="#使用指定数据库" class="headerlink" title="使用指定数据库"></a>使用指定数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">use</span> databaseName;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="显示全部数据库"><a href="#显示全部数据库" class="headerlink" title="显示全部数据库"></a>显示全部数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</div></pre></td></tr></table></figure>
+<h3 id="显示全部数据库表"><a href="#显示全部数据库表" class="headerlink" title="显示全部数据库表"></a>显示全部数据库表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</div></pre></td></tr></table></figure>
+<h3 id="查看指定数据库表的列信息"><a href="#查看指定数据库表的列信息" class="headerlink" title="查看指定数据库表的列信息"></a>查看指定数据库表的列信息</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">desc tablename;</div></pre></td></tr></table></figure>
+<h3 id="显示指定数据库表创建的sql的语句"><a href="#显示指定数据库表创建的sql的语句" class="headerlink" title="显示指定数据库表创建的sql的语句"></a>显示指定数据库表创建的sql的语句</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">show</span> <span class="keyword">create</span> <span class="keyword">table</span> tableName;</div></pre></td></tr></table></figure>
+<h3 id="显示指定数据库表的信息"><a href="#显示指定数据库表的信息" class="headerlink" title="显示指定数据库表的信息"></a>显示指定数据库表的信息</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">TABLES</span> <span class="keyword">where</span> TABLE_SCHEMA = <span class="string">'dbName'</span> <span class="keyword">and</span> TABLE_NAME = <span class="string">'tableName'</span>;</div></pre></td></tr></table></figure>
+<h3 id="创建数据库表-1"><a href="#创建数据库表-1" class="headerlink" title="创建数据库表"></a>创建数据库表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">create</span> <span class="keyword">table</span> tableName (</div><div class="line">	字段名 类型  auto_increment primary <span class="keyword">key</span> <span class="keyword">comment</span> <span class="string">'注释'</span>,</div><div class="line">	....</div><div class="line">)<span class="keyword">engine</span> = <span class="string">'引擎'</span> <span class="keyword">default</span> <span class="keyword">charset</span> = <span class="string">'编码'</span> <span class="keyword">comment</span> <span class="string">'表注释'</span>；</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;创建数据库表&quot;&gt;&lt;a href=&quot;#创建数据库表&quot; class=&quot;headerlink&quot; title=&quot;创建数据库表&quot;&gt;&lt;/a&gt;创建数据库表&lt;/h3&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;create&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;database&lt;/span&gt; databaseName;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;使用指定数据库&quot;&gt;&lt;a href=&quot;#使用指定数据库&quot; class=&quot;headerlink&quot; title=&quot;使用指定数据库&quot;&gt;&lt;/a&gt;使用指定数据库&lt;/h3&gt;&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; databaseName;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="http://charmcore.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="后端" scheme="http://charmcore.com/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo</title>
+    <link href="http://charmcore.com/2015/12/12/hexo_1/"/>
+    <id>http://charmcore.com/2015/12/12/hexo_1/</id>
+    <published>2015-12-12T04:12:12.000Z</published>
+    <updated>2016-09-22T09:37:13.224Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://charmcore.com/categories/Hexo/"/>
+    
+      <category term="Github" scheme="http://charmcore.com/categories/Hexo/Github/"/>
+    
+    
+      <category term="工具资源" scheme="http://charmcore.com/tags/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="前端" scheme="http://charmcore.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+</feed>
