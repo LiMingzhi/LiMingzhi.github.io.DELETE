@@ -1,0 +1,759 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SonarQube,MSBuild,Git,GitHub,SonarQube Scanner for MSBuild,.Net,单元测试," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="一、准备篇
+下载Jenkins
+下载Git
+注册GitHub
+下载SonarQube
+下载Analyzing with SonarQube Scanner for MSBuild
+下载Mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用">
+<meta property="og:url" content="http://charmcore.com/2016/09/22/jenkins_1/index.html">
+<meta property="og:site_name" content="Mickey's Club">
+<meta property="og:description" content="一、准备篇
+下载Jenkins
+下载Git
+注册GitHub
+下载SonarQube
+下载Analyzing with SonarQube Scanner for MSBuild
+下载Mysql">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-0.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-1.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-2.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-3.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-4.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-5.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-6.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-7.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-8.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-9.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-10.png">
+<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/CharmCorewechatadmin%20platform.jpg">
+<meta property="og:updated_time" content="2016-09-22T09:33:19.673Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用">
+<meta name="twitter:description" content="一、准备篇
+下载Jenkins
+下载Git
+注册GitHub
+下载SonarQube
+下载Analyzing with SonarQube Scanner for MSBuild
+下载Mysql">
+<meta name="twitter:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-0.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://charmcore.com/2016/09/22/jenkins_1/"/>
+
+  <title> Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用 | Mickey's Club </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Mickey's Club</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Mickey's Club</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-22T12:12:12+08:00" content="2016-09-22">
+              2016-09-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具资源/" itemprop="url" rel="index">
+                    <span itemprop="name">工具资源</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具资源/后端/" itemprop="url" rel="index">
+                    <span itemprop="name">后端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/22/jenkins_1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/jenkins_1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、准备篇"><a href="#一、准备篇" class="headerlink" title="一、准备篇"></a>一、准备篇</h1><ul>
+<li>下载<a href="https://jenkins.io/" title="Jenkins" target="_blank" rel="external">Jenkins</a></li>
+<li>下载<a href="https://git-scm.com/" title="Git" target="_blank" rel="external">Git</a></li>
+<li>注册<a href="https://github.com/" title="GitHub" target="_blank" rel="external">GitHub</a></li>
+<li>下载<a href="http://www.sonarqube.org/downloads/" title="SonarQube" target="_blank" rel="external">SonarQube</a></li>
+<li>下载<a href="http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild/" title="SonarQube Scanner for MSBuild" target="_blank" rel="external">Analyzing with SonarQube Scanner for MSBuild</a></li>
+<li>下载<a href="https://www.mysql.com/" title="Mysql" target="_blank" rel="external">Mysql</a><a id="more"></a>
+</li>
+</ul>
+<h1 id="二、安装篇"><a href="#二、安装篇" class="headerlink" title="二、安装篇"></a>二、安装篇</h1><h2 id="安装Jenkins-http-localhost-8080"><a href="#安装Jenkins-http-localhost-8080" class="headerlink" title="安装Jenkins(http://localhost:8080)"></a>安装Jenkins(<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>)</h2><ol>
+<li>执行jenkins.msi(D:\Jenkins)</li>
+</ol>
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><ol>
+<li>执行Git-2.10.0-64-bit.exe(D:\Git)</li>
+<li>配置环境变量(右键此电脑-属性-高级系统设置-环境变量)</li>
+<li>如图配置<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-0.png" alt="Alt text" title="Git环境变量配置"></li>
+</ol>
+<h1 id="三、配置篇"><a href="#三、配置篇" class="headerlink" title="三、配置篇"></a>三、配置篇</h1><h2 id="配置Jenkins服务"><a href="#配置Jenkins服务" class="headerlink" title="配置Jenkins服务"></a>配置Jenkins服务</h2><ol>
+<li>配置Jenkins服务以管理员身份登陆</li>
+</ol>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><ol>
+<li><strong>系统管理</strong>-&gt;<strong>管理插件</strong>-&gt;<strong>查找</strong>(GitHub plugin、Git plugin、SBuild Plugin、SonarQube Plugin等)</li>
+<li>安装失败可以手动下载文件(.hpi)<strong>系统管理</strong>-&gt;<strong>管理插件</strong>-&gt;<strong>高级</strong>-&gt;<strong>上传插件</strong></li>
+</ol>
+<h2 id="配置SonarQube、Git、GitHub和MSBuild"><a href="#配置SonarQube、Git、GitHub和MSBuild" class="headerlink" title="配置SonarQube、Git、GitHub和MSBuild"></a>配置SonarQube、Git、GitHub和MSBuild</h2><ol>
+<li><strong>系统管理</strong>-&gt;<strong>系统设置</strong></li>
+<li><strong>SonarQube servers</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-1.png" alt="Alt text" title="SonarQube servers配置"></li>
+<li><strong>JDK</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-2.png" alt="Alt text" title="JDK配置"></li>
+<li><strong>Git</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-3.png" alt="Alt text" title="Git配置"></li>
+<li><strong>MSBuild</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-4.png" alt="Alt text" title="MSBuild配置"></li>
+<li><strong>SonarQube Scanner for MSBuild</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-5.png" alt="Alt text" title="SonarQube Scanner for MSBuild配置"></li>
+<li><strong>Jenkins Location</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-6.png" alt="Alt text" title="Jenkins Location配置"></li>
+</ol>
+<h1 id="四、使用篇"><a href="#四、使用篇" class="headerlink" title="四、使用篇"></a>四、使用篇</h1><h2 id="构建项目"><a href="#构建项目" class="headerlink" title="构建项目"></a>构建项目</h2><ol>
+<li>创建项目<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-7.png" alt="Alt text" title="创建项目"></li>
+<li><strong>源码管理</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-8.png" alt="Alt text" title="源码管理配置"></li>
+<li><strong>构建触发器</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-9.png" alt="Alt text" title="构建触发器配置"></li>
+<li><strong>构建</strong>(添加构建步骤-&gt;Build a Visual Studio project or solution using MSBuild)<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-10.png" alt="Alt text" title="构建配置"></li>
+<li>保存-&gt;构建</li>
+</ol>
+<hr>
+<table>
+<thead>
+<tr>
+<th>微信公众号</th>
+<th>版权声明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="http://ocr8mp6cx.bkt.clouddn.com/CharmCorewechatadmin%20platform.jpg" alt="Alt text"></td>
+<td>作者：李明智(Mickey)<br>微信公众号：LOVING-SKY-SMILE<br>著作权归作者所有，转载请联系作者获得授权，但未经作者同意必须保留此段声明，且在文章明显位置给出原文链接，否则保留追究法律责任的权利。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SonarQube/" rel="tag">#SonarQube</a>
+          
+            <a href="/tags/MSBuild/" rel="tag">#MSBuild</a>
+          
+            <a href="/tags/Git/" rel="tag">#Git</a>
+          
+            <a href="/tags/GitHub/" rel="tag">#GitHub</a>
+          
+            <a href="/tags/SonarQube-Scanner-for-MSBuild/" rel="tag">#SonarQube Scanner for MSBuild</a>
+          
+            <a href="/tags/Net/" rel="tag">#.Net</a>
+          
+            <a href="/tags/单元测试/" rel="tag">#单元测试</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/01/sonarqube_1/" rel="next" title="SonarQube安装、配置与使用">
+                <i class="fa fa-chevron-left"></i> SonarQube安装、配置与使用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/22/jenkins_1/"
+           data-title="Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用" data-url="http://charmcore.com/2016/09/22/jenkins_1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars0.githubusercontent.com/u/12408091?v=3&s=460"
+               alt="Mickey" />
+          <p class="site-author-name" itemprop="name">Mickey</p>
+          <p class="site-description motion-element" itemprop="description">Mickey's Club</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/LiMingzhi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/charmcore" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、准备篇"><span class="nav-number">1.</span> <span class="nav-text">一、准备篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、安装篇"><span class="nav-number">2.</span> <span class="nav-text">二、安装篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Jenkins-http-localhost-8080"><span class="nav-number">2.1.</span> <span class="nav-text">安装Jenkins(http://localhost:8080)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">2.2.</span> <span class="nav-text">安装Git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、配置篇"><span class="nav-number">3.</span> <span class="nav-text">三、配置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Jenkins服务"><span class="nav-number">3.1.</span> <span class="nav-text">配置Jenkins服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">3.2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SonarQube、Git、GitHub和MSBuild"><span class="nav-number">3.3.</span> <span class="nav-text">配置SonarQube、Git、GitHub和MSBuild</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、使用篇"><span class="nav-number">4.</span> <span class="nav-text">四、使用篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构建项目"><span class="nav-number">4.1.</span> <span class="nav-text">构建项目</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mickey</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"charmcore"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
