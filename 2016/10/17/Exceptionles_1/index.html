@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content=".Net,SonarQube,MSBuild,Git,GitHub,SonarQube Scanner for MSBuild,单元测试," />
+  <meta name="keywords" content="Exceptionless,ElasticSearch,.Net," />
 
 
 
@@ -87,46 +87,35 @@
 
 
 <meta name="description" content="一、准备篇
-下载Jenkins
-下载Git
-注册GitHub
-下载SonarQube
-下载Analyzing with SonarQube Scanner for MSBuild
-下载Mysql">
+下载NET 4.6.1.aspx “NET 4.6.1”)
+下载Java JDK 1.8+，当使用Windows时，JAVA_HOME环境变量须配置
+下载IIS Express 8+
+下载PowerShell 3+
+下载ElasticSearch 1.7.5(Elasticsearch 2.x is not yet supported)
+下载Exceptionless，Extract">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用">
-<meta property="og:url" content="http://charmcore.com/2016/09/22/jenkins_1/index.html">
+<meta property="og:title" content="Exceptionless安装、配置与使用">
+<meta property="og:url" content="http://charmcore.com/2016/10/17/Exceptionles_1/index.html">
 <meta property="og:site_name" content="Mickey's Club">
 <meta property="og:description" content="一、准备篇
-下载Jenkins
-下载Git
-注册GitHub
-下载SonarQube
-下载Analyzing with SonarQube Scanner for MSBuild
-下载Mysql">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-0.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-1.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-2.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-3.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-4.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-5.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-6.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-7.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-8.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-9.png">
-<meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-10.png">
+下载NET 4.6.1.aspx “NET 4.6.1”)
+下载Java JDK 1.8+，当使用Windows时，JAVA_HOME环境变量须配置
+下载IIS Express 8+
+下载PowerShell 3+
+下载ElasticSearch 1.7.5(Elasticsearch 2.x is not yet supported)
+下载Exceptionless，Extract">
 <meta property="og:image" content="http://ocr8mp6cx.bkt.clouddn.com/CharmCorewechatadmin%20platform.jpg">
-<meta property="og:updated_time" content="2016-09-22T09:33:19.673Z">
+<meta property="og:updated_time" content="2016-10-17T05:52:07.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用">
+<meta name="twitter:title" content="Exceptionless安装、配置与使用">
 <meta name="twitter:description" content="一、准备篇
-下载Jenkins
-下载Git
-注册GitHub
-下载SonarQube
-下载Analyzing with SonarQube Scanner for MSBuild
-下载Mysql">
-<meta name="twitter:image" content="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-0.png">
+下载NET 4.6.1.aspx “NET 4.6.1”)
+下载Java JDK 1.8+，当使用Windows时，JAVA_HOME环境变量须配置
+下载IIS Express 8+
+下载PowerShell 3+
+下载ElasticSearch 1.7.5(Elasticsearch 2.x is not yet supported)
+下载Exceptionless，Extract">
+<meta name="twitter:image" content="http://ocr8mp6cx.bkt.clouddn.com/CharmCorewechatadmin%20platform.jpg">
 
 
 
@@ -147,9 +136,9 @@
 
 
 
-  <link rel="canonical" href="http://charmcore.com/2016/09/22/jenkins_1/"/>
+  <link rel="canonical" href="http://charmcore.com/2016/10/17/Exceptionles_1/"/>
 
-  <title> Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用 | Mickey's Club </title>
+  <title> Exceptionless安装、配置与使用 | Mickey's Club </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +288,7 @@
             
             
               
-                Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用
+                Exceptionless安装、配置与使用
               
             
           </h1>
@@ -311,8 +300,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-22T12:12:12+08:00" content="2016-09-22">
-              2016-09-22
+            <time itemprop="dateCreated" datetime="2016-10-17T12:12:12+08:00" content="2016-10-17">
+              2016-10-17
             </time>
           </span>
 
@@ -344,6 +333,18 @@
 
                 
                 
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具资源/后端/阅读/" itemprop="url" rel="index">
+                    <span itemprop="name">阅读</span>
+                  </a>
+                </span>
+
+                
+                
 
               
             </span>
@@ -353,8 +354,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/22/jenkins_1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/22/jenkins_1/" itemprop="commentsCount"></span>
+                <a href="/2016/10/17/Exceptionles_1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/Exceptionles_1/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -378,44 +379,33 @@
 
       
         <h1 id="一、准备篇"><a href="#一、准备篇" class="headerlink" title="一、准备篇"></a>一、准备篇</h1><ul>
-<li>下载<a href="https://jenkins.io/" title="Jenkins" target="_blank" rel="external">Jenkins</a></li>
-<li>下载<a href="https://git-scm.com/" title="Git" target="_blank" rel="external">Git</a></li>
-<li>注册<a href="https://github.com/" title="GitHub" target="_blank" rel="external">GitHub</a></li>
-<li>下载<a href="http://www.sonarqube.org/downloads/" title="SonarQube" target="_blank" rel="external">SonarQube</a></li>
-<li>下载<a href="http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+MSBuild/" title="SonarQube Scanner for MSBuild" target="_blank" rel="external">Analyzing with SonarQube Scanner for MSBuild</a></li>
-<li>下载<a href="https://www.mysql.com/" title="Mysql" target="_blank" rel="external">Mysql</a><a id="more"></a>
+<li>下载<a href="https://msdn.microsoft.com/en-us/library/8z6watww(v=vs.110" target="_blank" rel="external">NET 4.6.1</a>.aspx “NET 4.6.1”)</li>
+<li>下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" title="Java JDK 1.8+" target="_blank" rel="external">Java JDK 1.8+</a>，当使用Windows时，JAVA_HOME环境变量须配置</li>
+<li>下载<a href="https://www.microsoft.com/en-us/download/details.aspx?id=34679" title="IIS Express 8+" target="_blank" rel="external">IIS Express 8+</a></li>
+<li>下载<a href="https://www.microsoft.com/en-us/download/details.aspx?id=34595" title="PowerShell 3+" target="_blank" rel="external">PowerShell 3+</a></li>
+<li>下载<a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.7/setup.html" title="ElasticSearch 1.7.5" target="_blank" rel="external">ElasticSearch 1.7.5</a>(Elasticsearch 2.x is not yet supported)</li>
+<li>下载<a href="https://github.com/exceptionless/Exceptionless/releases" title="Exceptionless" target="_blank" rel="external">Exceptionless</a>，Extract the latest Exceptionless release artifact ZIP to your machine<a id="more"></a>
 </li>
 </ul>
-<h1 id="二、安装篇"><a href="#二、安装篇" class="headerlink" title="二、安装篇"></a>二、安装篇</h1><h2 id="安装Jenkins-http-localhost-8080"><a href="#安装Jenkins-http-localhost-8080" class="headerlink" title="安装Jenkins(http://localhost:8080)"></a>安装Jenkins(<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>)</h2><ol>
-<li>执行jenkins.msi(D:\Jenkins)</li>
+<h1 id="二、安装篇"><a href="#二、安装篇" class="headerlink" title="二、安装篇"></a>二、安装篇</h1><h3 id="安装NET-4-6-1"><a href="#安装NET-4-6-1" class="headerlink" title="安装NET 4.6.1"></a>安装NET 4.6.1</h3><h3 id="安装-Java-JDK-1-8"><a href="#安装-Java-JDK-1-8" class="headerlink" title="安装(Java JDK 1.8+)"></a>安装(<a href="http://charmcore.com/2016/09/01/sonarqube_1/" title="Java JDK 1.8+">Java JDK 1.8+</a>)</h3><h3 id="安装ElasticSearch-1-7-5"><a href="#安装ElasticSearch-1-7-5" class="headerlink" title="安装ElasticSearch 1.7.5"></a>安装ElasticSearch 1.7.5</h3><ol>
+<li>解压ElasticSearch到目录(D:\ElasticSearch 1.7.5)</li>
 </ol>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><ol>
-<li>执行Git-2.10.0-64-bit.exe(D:\Git)</li>
-<li>配置环境变量(右键此电脑-属性-高级系统设置-环境变量)</li>
-<li>如图配置<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-0.png" alt="Alt text" title="Git环境变量配置"></li>
+<h3 id="安装Exceptionless"><a href="#安装Exceptionless" class="headerlink" title="安装Exceptionless"></a>安装Exceptionless</h3><ol>
+<li>解压Exceptionless到目录(D:\Exceptionless)</li>
+<li>蒋D:\Exceptionless的elasticsearch.yml复制到D:\Elasticsearch-1.7.5\bin目录</li>
+<li>执行elasticsearch.bat，打开链接地址<a href="http://localhost:9200/,看到相关信息则成功" target="_blank" rel="external">http://localhost:9200/,看到相关信息则成功</a></li>
+<li>部署ElasticSearch服务，执行service.bat install|remove|start|stop|manager</li>
+<li>IIS部署Exceptionless，路径选择D:\Exceptionless\wwwroot，端口可自定义</li>
 </ol>
-<h1 id="三、配置篇"><a href="#三、配置篇" class="headerlink" title="三、配置篇"></a>三、配置篇</h1><h2 id="配置Jenkins服务"><a href="#配置Jenkins服务" class="headerlink" title="配置Jenkins服务"></a>配置Jenkins服务</h2><ol>
-<li>配置Jenkins服务以管理员身份登陆</li>
+<h1 id="二、配置篇"><a href="#二、配置篇" class="headerlink" title="二、配置篇"></a>二、配置篇</h1><h3 id="配置Exceptionless"><a href="#配置Exceptionless" class="headerlink" title="配置Exceptionless"></a>配置Exceptionless</h3><ol>
+<li>web.config中的ElasticSearchConnectionString为ElasticSearch的站点<a href="http://localhost:9200，修改" target="_blank" rel="external">http://localhost:9200，修改</a><add key="BaseURL" value="http://localhost:50000/#">，注意后面的<em>#</em></add></li>
+<li>修改app.config.*.js中的.constant(‘BASE_URL’, ‘<a href="http://localhost:50000" target="_blank" rel="external">http://localhost:50000</a>‘)</li>
+<li>Exceptionless服务器选择具体IP地址，不使用<a href="http://localhost:50000/#" target="_blank" rel="external">http://localhost:50000/#</a></li>
+<li>邮箱配置,修改配置文件web.config<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">  &lt;appSettings&gt;</div><div class="line">    &lt;!-- Base url for the ui used to build links in emails and other places. --&gt;</div><div class="line">    &lt;add key=&quot;BaseURL&quot; value=&quot;http://localhost:50000/#&quot; /&gt;</div><div class="line">    &lt;!-- Controls whether SSL is required. Only enable this if you have SSL configured. --&gt;</div><div class="line">    &lt;add key=&quot;EnableSSL&quot; value=&quot;false&quot; /&gt;</div><div class="line">    &lt;!--</div><div class="line">    Dev: Use this mode when debugging. (Outbound emails restricted)</div><div class="line">    QA: Use this mode when deployed to staging.  (Outbound emails restricted)</div><div class="line">    Production: Use this mode when deployed to production.</div><div class="line">    --&gt;</div><div class="line">    &lt;add key=&quot;WebsiteMode&quot; value=&quot;Production&quot; /&gt;</div><div class="line">    &lt;!-- Email addresses that match this comma delimited list of domains and email addresses will be allowed to be sent out in Dev and QA mode --&gt;</div><div class="line">    &lt;add key=&quot;AllowedOutboundAddresses&quot; value=&quot;exceptionless.io,codesmithtools.com,qq.com&quot; /&gt;</div><div class="line">    &lt;!-- All emails that do not match the AllowedOutboundAddresses will be sent to this address in Dev and QA mode --&gt;</div><div class="line">    &lt;add key=&quot;TestEmailAddress&quot; value=&quot;noreply@exceptionless.io&quot; /&gt;</div><div class="line">    &lt;!-- Controls whether users can signup. --&gt;</div><div class="line">    &lt;add key=&quot;EnableAccountCreation&quot; value=&quot;true&quot; /&gt;</div><div class="line">    &lt;!-- Controls whether daily summary emails are sent --&gt;</div><div class="line">    &lt;add key=&quot;EnableDailySummary&quot; value=&quot;true&quot; /&gt;</div><div class="line">    &lt;!-- Folder used to store event post data --&gt;</div><div class="line">    &lt;add key=&quot;StorageFolder&quot; value=&quot;|DataDirectory|\storage&quot; /&gt;</div><div class="line">    &lt;!-- Runs the jobs in the current website process --&gt;</div><div class="line">    &lt;add key=&quot;RunJobsInProcess&quot; value=&quot;true&quot; /&gt;</div><div class="line">    &lt;add key=&quot;aspnet:UseTaskFriendlySynchronizationContext&quot; value=&quot;true&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;add key=&quot;SmtpHost&quot; value=&quot;smtp.qq.com&quot; /&gt;</div><div class="line">    &lt;add key=&quot;SmtpPort&quot; value=&quot;25&quot; /&gt;</div><div class="line">    &lt;add key=&quot;SmtpEnableSsl&quot; value=&quot;false&quot; /&gt;</div><div class="line">    &lt;add key=&quot;SmtpUser&quot; value=&quot;邮箱账号&quot; /&gt;</div><div class="line">    &lt;add key=&quot;SmtpPassword&quot; value=&quot;邮箱密码或授权码&quot; /&gt;</div><div class="line">  &lt;/appSettings&gt;</div><div class="line">  &lt;system.net&gt;</div><div class="line">    &lt;mailSettings&gt;</div><div class="line">      &lt;smtp from=&quot;Exceptionless &amp;lt;邮箱账号&amp;gt;&quot;&gt;</div><div class="line">        &lt;network host=&quot;localhost&quot; port=&quot;25&quot; /&gt;</div><div class="line">      &lt;/smtp&gt;</div><div class="line">    &lt;/mailSettings&gt;</div><div class="line">    &lt;defaultProxy enabled=&quot;true&quot; /&gt;</div><div class="line">  &lt;/system.net&gt;</div><div class="line">#--------------------------------------------------------------------------------------------------</div><div class="line">&lt;system.net&gt;</div><div class="line">    &lt;mailSettings&gt;</div><div class="line">      &lt;smtp from=&quot;xxx@qq.com&quot;&gt;</div><div class="line">        &lt;network host=&quot;smtp.qq.com&quot; port=&quot;25&quot; userName=&quot;xxx@qq.com&quot; password=&quot;xxx&quot; /&gt;</div><div class="line">      &lt;/smtp&gt;</div><div class="line">    &lt;/mailSettings&gt;</div><div class="line">    &lt;defaultProxy enabled=&quot;true&quot; /&gt;</div><div class="line">&lt;/system.net&gt;</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><ol>
-<li><strong>系统管理</strong>-&gt;<strong>管理插件</strong>-&gt;<strong>查找</strong>(GitHub plugin、Git plugin、SBuild Plugin、SonarQube Plugin等)</li>
-<li>安装失败可以手动下载文件(.hpi)<strong>系统管理</strong>-&gt;<strong>管理插件</strong>-&gt;<strong>高级</strong>-&gt;<strong>上传插件</strong></li>
-</ol>
-<h2 id="配置SonarQube、Git、GitHub和MSBuild"><a href="#配置SonarQube、Git、GitHub和MSBuild" class="headerlink" title="配置SonarQube、Git、GitHub和MSBuild"></a>配置SonarQube、Git、GitHub和MSBuild</h2><ol>
-<li><strong>系统管理</strong>-&gt;<strong>系统设置</strong></li>
-<li><strong>SonarQube servers</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-1.png" alt="Alt text" title="SonarQube servers配置"></li>
-<li><strong>JDK</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-2.png" alt="Alt text" title="JDK配置"></li>
-<li><strong>Git</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-3.png" alt="Alt text" title="Git配置"></li>
-<li><strong>MSBuild</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-4.png" alt="Alt text" title="MSBuild配置"></li>
-<li><strong>SonarQube Scanner for MSBuild</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-5.png" alt="Alt text" title="SonarQube Scanner for MSBuild配置"></li>
-<li><strong>Jenkins Location</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-6.png" alt="Alt text" title="Jenkins Location配置"></li>
-</ol>
-<h1 id="四、使用篇"><a href="#四、使用篇" class="headerlink" title="四、使用篇"></a>四、使用篇</h1><h2 id="构建项目"><a href="#构建项目" class="headerlink" title="构建项目"></a>构建项目</h2><ol>
-<li>创建项目<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-7.png" alt="Alt text" title="创建项目"></li>
-<li><strong>源码管理</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-8.png" alt="Alt text" title="源码管理配置"></li>
-<li><strong>构建触发器</strong><br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-9.png" alt="Alt text" title="构建触发器配置"></li>
-<li><strong>构建</strong>(添加构建步骤-&gt;Build a Visual Studio project or solution using MSBuild)<br><img src="http://ocr8mp6cx.bkt.clouddn.com/ToolsResourcesjenkins-10.png" alt="Alt text" title="构建配置"></li>
-<li>保存-&gt;构建</li>
+<h1 id="三、使用篇"><a href="#三、使用篇" class="headerlink" title="三、使用篇"></a>三、使用篇</h1><h3 id="使用Exceptionless"><a href="#使用Exceptionless" class="headerlink" title="使用Exceptionless"></a>使用Exceptionless</h3><ol>
+<li>打开链接地址<a href="http://localhost:50000，创建账户--&gt;创建项目，根据提示使用Exceptionless" target="_blank" rel="external">http://localhost:50000，创建账户--&gt;创建项目，根据提示使用Exceptionless</a></li>
 </ol>
 <hr>
 <table>
@@ -455,19 +445,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Exceptionless/" rel="tag">#Exceptionless</a>
+          
+            <a href="/tags/ElasticSearch/" rel="tag">#ElasticSearch</a>
+          
             <a href="/tags/Net/" rel="tag">#.Net</a>
-          
-            <a href="/tags/SonarQube/" rel="tag">#SonarQube</a>
-          
-            <a href="/tags/MSBuild/" rel="tag">#MSBuild</a>
-          
-            <a href="/tags/Git/" rel="tag">#Git</a>
-          
-            <a href="/tags/GitHub/" rel="tag">#GitHub</a>
-          
-            <a href="/tags/SonarQube-Scanner-for-MSBuild/" rel="tag">#SonarQube Scanner for MSBuild</a>
-          
-            <a href="/tags/单元测试/" rel="tag">#单元测试</a>
           
         </div>
       
@@ -476,17 +458,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/01/sonarqube_1/" rel="next" title="SonarQube安装、配置与使用">
-                <i class="fa fa-chevron-left"></i> SonarQube安装、配置与使用
+              <a href="/2016/09/22/jenkins_1/" rel="next" title="Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用">
+                <i class="fa fa-chevron-left"></i> Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/17/Exceptionles_1/" rel="prev" title="Exceptionless安装、配置与使用">
-                Exceptionless安装、配置与使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,8 +490,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/09/22/jenkins_1/"
-           data-title="Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用" data-url="http://charmcore.com/2016/09/22/jenkins_1/">
+      <div class="ds-thread" data-thread-key="2016/10/17/Exceptionles_1/"
+           data-title="Exceptionless安装、配置与使用" data-url="http://charmcore.com/2016/10/17/Exceptionles_1/">
       </div>
     
   </div>
@@ -649,7 +627,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、准备篇"><span class="nav-number">1.</span> <span class="nav-text">一、准备篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、安装篇"><span class="nav-number">2.</span> <span class="nav-text">二、安装篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Jenkins-http-localhost-8080"><span class="nav-number">2.1.</span> <span class="nav-text">安装Jenkins(http://localhost:8080)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Git"><span class="nav-number">2.2.</span> <span class="nav-text">安装Git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、配置篇"><span class="nav-number">3.</span> <span class="nav-text">三、配置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Jenkins服务"><span class="nav-number">3.1.</span> <span class="nav-text">配置Jenkins服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装插件"><span class="nav-number">3.2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置SonarQube、Git、GitHub和MSBuild"><span class="nav-number">3.3.</span> <span class="nav-text">配置SonarQube、Git、GitHub和MSBuild</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、使用篇"><span class="nav-number">4.</span> <span class="nav-text">四、使用篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构建项目"><span class="nav-number">4.1.</span> <span class="nav-text">构建项目</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、准备篇"><span class="nav-number">1.</span> <span class="nav-text">一、准备篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、安装篇"><span class="nav-number">2.</span> <span class="nav-text">二、安装篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装NET-4-6-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">安装NET 4.6.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Java-JDK-1-8"><span class="nav-number">2.0.2.</span> <span class="nav-text">安装(Java JDK 1.8+)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装ElasticSearch-1-7-5"><span class="nav-number">2.0.3.</span> <span class="nav-text">安装ElasticSearch 1.7.5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Exceptionless"><span class="nav-number">2.0.4.</span> <span class="nav-text">安装Exceptionless</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、配置篇"><span class="nav-number">3.</span> <span class="nav-text">二、配置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Exceptionless"><span class="nav-number">3.0.1.</span> <span class="nav-text">配置Exceptionless</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、使用篇"><span class="nav-number">4.</span> <span class="nav-text">三、使用篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Exceptionless"><span class="nav-number">4.0.1.</span> <span class="nav-text">使用Exceptionless</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>

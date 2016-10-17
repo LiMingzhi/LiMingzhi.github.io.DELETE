@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://charmcore.com/"/>
-  <updated>2016-09-22T09:33:19.673Z</updated>
+  <updated>2016-10-17T05:52:07.588Z</updated>
   <id>http://charmcore.com/</id>
   
   <author>
@@ -14,6 +14,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Exceptionless安装、配置与使用</title>
+    <link href="http://charmcore.com/2016/10/17/Exceptionles_1/"/>
+    <id>http://charmcore.com/2016/10/17/Exceptionles_1/</id>
+    <published>2016-10-17T04:12:12.000Z</published>
+    <updated>2016-10-17T05:52:07.588Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、准备篇"><a href="#一、准备篇" class="headerlink" title="一、准备篇"></a>一、准备篇</h1><ul>
+<li>下载<a href="https://msdn.microsoft.com/en-us/library/8z6watww(v=vs.110" target="_blank" rel="external">NET 4.6.1</a>.aspx “NET 4.6.1”)</li>
+<li>下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" title="Java JDK 1.8+" target="_blank" rel="external">Java JDK 1.8+</a>，当使用Windows时，JAVA_HOME环境变量须配置</li>
+<li>下载<a href="https://www.microsoft.com/en-us/download/details.aspx?id=34679" title="IIS Express 8+" target="_blank" rel="external">IIS Express 8+</a></li>
+<li>下载<a href="https://www.microsoft.com/en-us/download/details.aspx?id=34595" title="PowerShell 3+" target="_blank" rel="external">PowerShell 3+</a></li>
+<li>下载<a href="https://www.elastic.co/guide/en/elasticsearch/reference/1.7/setup.html" title="ElasticSearch 1.7.5" target="_blank" rel="external">ElasticSearch 1.7.5</a>(Elasticsearch 2.x is not yet supported)</li>
+<li>下载<a href="https://github.com/exceptionless/Exceptionless/releases" title="Exceptionless" target="_blank" rel="external">Exceptionless</a>，Extract the latest Exceptionless release artifact ZIP to your machine<a id="more"></a>
+</li>
+</ul>
+<h1 id="二、安装篇"><a href="#二、安装篇" class="headerlink" title="二、安装篇"></a>二、安装篇</h1><h3 id="安装NET-4-6-1"><a href="#安装NET-4-6-1" class="headerlink" title="安装NET 4.6.1"></a>安装NET 4.6.1</h3><h3 id="安装-Java-JDK-1-8"><a href="#安装-Java-JDK-1-8" class="headerlink" title="安装(Java JDK 1.8+)"></a>安装(<a href="http://charmcore.com/2016/09/01/sonarqube_1/" title="Java JDK 1.8+">Java JDK 1.8+</a>)</h3><h3 id="安装ElasticSearch-1-7-5"><a href="#安装ElasticSearch-1-7-5" class="headerlink" title="安装ElasticSearch 1.7.5"></a>安装ElasticSearch 1.7.5</h3><ol>
+<li>解压ElasticSearch到目录(D:\ElasticSearch 1.7.5)</li>
+</ol>
+<h3 id="安装Exceptionless"><a href="#安装Exceptionless" class="headerlink" title="安装Exceptionless"></a>安装Exceptionless</h3><ol>
+<li>解压Exceptionless到目录(D:\Exceptionless)</li>
+<li>蒋D:\Exceptionless的elasticsearch.yml复制到D:\Elasticsearch-1.7.5\bin目录</li>
+<li>执行elasticsearch.bat，打开链接地址<a href="http://localhost:9200/,看到相关信息则成功" target="_blank" rel="external">http://localhost:9200/,看到相关信息则成功</a></li>
+<li>部署ElasticSearch服务，执行service.bat install|remove|start|stop|manager</li>
+<li>IIS部署Exceptionless，路径选择D:\Exceptionless\wwwroot，端口可自定义</li>
+</ol>
+<h1 id="二、配置篇"><a href="#二、配置篇" class="headerlink" title="二、配置篇"></a>二、配置篇</h1><h3 id="配置Exceptionless"><a href="#配置Exceptionless" class="headerlink" title="配置Exceptionless"></a>配置Exceptionless</h3><ol>
+<li>web.config中的ElasticSearchConnectionString为ElasticSearch的站点<a href="http://localhost:9200，修改" target="_blank" rel="external">http://localhost:9200，修改</a><add key="BaseURL" value="http://localhost:50000/#">，注意后面的<em>#</em></add></li>
+<li>修改app.config.*.js中的.constant(‘BASE_URL’, ‘<a href="http://localhost:50000" target="_blank" rel="external">http://localhost:50000</a>‘)</li>
+<li>Exceptionless服务器选择具体IP地址，不使用<a href="http://localhost:50000/#" target="_blank" rel="external">http://localhost:50000/#</a></li>
+<li>邮箱配置,修改配置文件web.config<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">  &lt;appSettings&gt;</div><div class="line">    &lt;!-- Base url for the ui used to build links in emails and other places. --&gt;</div><div class="line">    &lt;add key=&quot;BaseURL&quot; value=&quot;http://localhost:50000/#&quot; /&gt;</div><div class="line">    &lt;!-- Controls whether SSL is required. Only enable this if you have SSL configured. --&gt;</div><div class="line">    &lt;add key=&quot;EnableSSL&quot; value=&quot;false&quot; /&gt;</div><div class="line">    &lt;!--</div><div class="line">    Dev: Use this mode when debugging. (Outbound emails restricted)</div><div class="line">    QA: Use this mode when deployed to staging.  (Outbound emails restricted)</div><div class="line">    Production: Use this mode when deployed to production.</div><div class="line">    --&gt;</div><div class="line">    &lt;add key=&quot;WebsiteMode&quot; value=&quot;Production&quot; /&gt;</div><div class="line">    &lt;!-- Email addresses that match this comma delimited list of domains and email addresses will be allowed to be sent out in Dev and QA mode --&gt;</div><div class="line">    &lt;add key=&quot;AllowedOutboundAddresses&quot; value=&quot;exceptionless.io,codesmithtools.com,qq.com&quot; /&gt;</div><div class="line">    &lt;!-- All emails that do not match the AllowedOutboundAddresses will be sent to this address in Dev and QA mode --&gt;</div><div class="line">    &lt;add key=&quot;TestEmailAddress&quot; value=&quot;noreply@exceptionless.io&quot; /&gt;</div><div class="line">    &lt;!-- Controls whether users can signup. --&gt;</div><div class="line">    &lt;add key=&quot;EnableAccountCreation&quot; value=&quot;true&quot; /&gt;</div><div class="line">    &lt;!-- Controls whether daily summary emails are sent --&gt;</div><div class="line">    &lt;add key=&quot;EnableDailySummary&quot; value=&quot;true&quot; /&gt;</div><div class="line">    &lt;!-- Folder used to store event post data --&gt;</div><div class="line">    &lt;add key=&quot;StorageFolder&quot; value=&quot;|DataDirectory|\storage&quot; /&gt;</div><div class="line">    &lt;!-- Runs the jobs in the current website process --&gt;</div><div class="line">    &lt;add key=&quot;RunJobsInProcess&quot; value=&quot;true&quot; /&gt;</div><div class="line">    &lt;add key=&quot;aspnet:UseTaskFriendlySynchronizationContext&quot; value=&quot;true&quot; /&gt;</div><div class="line"></div><div class="line">    &lt;add key=&quot;SmtpHost&quot; value=&quot;smtp.qq.com&quot; /&gt;</div><div class="line">    &lt;add key=&quot;SmtpPort&quot; value=&quot;25&quot; /&gt;</div><div class="line">    &lt;add key=&quot;SmtpEnableSsl&quot; value=&quot;false&quot; /&gt;</div><div class="line">    &lt;add key=&quot;SmtpUser&quot; value=&quot;邮箱账号&quot; /&gt;</div><div class="line">    &lt;add key=&quot;SmtpPassword&quot; value=&quot;邮箱密码或授权码&quot; /&gt;</div><div class="line">  &lt;/appSettings&gt;</div><div class="line">  &lt;system.net&gt;</div><div class="line">    &lt;mailSettings&gt;</div><div class="line">      &lt;smtp from=&quot;Exceptionless &amp;lt;邮箱账号&amp;gt;&quot;&gt;</div><div class="line">        &lt;network host=&quot;localhost&quot; port=&quot;25&quot; /&gt;</div><div class="line">      &lt;/smtp&gt;</div><div class="line">    &lt;/mailSettings&gt;</div><div class="line">    &lt;defaultProxy enabled=&quot;true&quot; /&gt;</div><div class="line">  &lt;/system.net&gt;</div><div class="line">#--------------------------------------------------------------------------------------------------</div><div class="line">&lt;system.net&gt;</div><div class="line">    &lt;mailSettings&gt;</div><div class="line">      &lt;smtp from=&quot;xxx@qq.com&quot;&gt;</div><div class="line">        &lt;network host=&quot;smtp.qq.com&quot; port=&quot;25&quot; userName=&quot;xxx@qq.com&quot; password=&quot;xxx&quot; /&gt;</div><div class="line">      &lt;/smtp&gt;</div><div class="line">    &lt;/mailSettings&gt;</div><div class="line">    &lt;defaultProxy enabled=&quot;true&quot; /&gt;</div><div class="line">&lt;/system.net&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="三、使用篇"><a href="#三、使用篇" class="headerlink" title="三、使用篇"></a>三、使用篇</h1><h3 id="使用Exceptionless"><a href="#使用Exceptionless" class="headerlink" title="使用Exceptionless"></a>使用Exceptionless</h3><ol>
+<li>打开链接地址<a href="http://localhost:50000，创建账户--&gt;创建项目，根据提示使用Exceptionless" target="_blank" rel="external">http://localhost:50000，创建账户--&gt;创建项目，根据提示使用Exceptionless</a></li>
+</ol>
+<hr>
+<table>
+<thead>
+<tr>
+<th>微信公众号</th>
+<th>版权声明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="http://ocr8mp6cx.bkt.clouddn.com/CharmCorewechatadmin%20platform.jpg" alt="Alt text"></td>
+<td>作者：李明智(Mickey)<br>微信公众号：LOVING-SKY-SMILE<br>著作权归作者所有，转载请联系作者获得授权，但未经作者同意必须保留此段声明，且在文章明显位置给出原文链接，否则保留追究法律责任的权利。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一、准备篇&quot;&gt;&lt;a href=&quot;#一、准备篇&quot; class=&quot;headerlink&quot; title=&quot;一、准备篇&quot;&gt;&lt;/a&gt;一、准备篇&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://msdn.microsoft.com/en-us/library/8z6watww(v=vs.110&quot;&gt;NET 4.6.1&lt;/a&gt;.aspx “NET 4.6.1”)&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/index.html&quot; title=&quot;Java JDK 1.8+&quot;&gt;Java JDK 1.8+&lt;/a&gt;，当使用Windows时，JAVA_HOME环境变量须配置&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=34679&quot; title=&quot;IIS Express 8+&quot;&gt;IIS Express 8+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://www.microsoft.com/en-us/download/details.aspx?id=34595&quot; title=&quot;PowerShell 3+&quot;&gt;PowerShell 3+&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/reference/1.7/setup.html&quot; title=&quot;ElasticSearch 1.7.5&quot;&gt;ElasticSearch 1.7.5&lt;/a&gt;(Elasticsearch 2.x is not yet supported)&lt;/li&gt;
+&lt;li&gt;下载&lt;a href=&quot;https://github.com/exceptionless/Exceptionless/releases&quot; title=&quot;Exceptionless&quot;&gt;Exceptionless&lt;/a&gt;，Extract the latest Exceptionless release artifact ZIP to your machine
+    
+    </summary>
+    
+      <category term="工具资源" scheme="http://charmcore.com/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/"/>
+    
+      <category term="后端" scheme="http://charmcore.com/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="阅读" scheme="http://charmcore.com/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/%E5%90%8E%E7%AB%AF/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="Exceptionless" scheme="http://charmcore.com/tags/Exceptionless/"/>
+    
+      <category term="ElasticSearch" scheme="http://charmcore.com/tags/ElasticSearch/"/>
+    
+      <category term=".Net" scheme="http://charmcore.com/tags/Net/"/>
+    
+  </entry>
   
   <entry>
     <title>Jenkins+MSBuild+Git+GitHub+SonarQube+SonarQube Scanner for MSBuild安装、配置与使用</title>
@@ -97,6 +178,8 @@
       <category term="后端" scheme="http://charmcore.com/categories/%E5%B7%A5%E5%85%B7%E8%B5%84%E6%BA%90/%E5%90%8E%E7%AB%AF/"/>
     
     
+      <category term=".Net" scheme="http://charmcore.com/tags/Net/"/>
+    
       <category term="SonarQube" scheme="http://charmcore.com/tags/SonarQube/"/>
     
       <category term="MSBuild" scheme="http://charmcore.com/tags/MSBuild/"/>
@@ -106,8 +189,6 @@
       <category term="GitHub" scheme="http://charmcore.com/tags/GitHub/"/>
     
       <category term="SonarQube Scanner for MSBuild" scheme="http://charmcore.com/tags/SonarQube-Scanner-for-MSBuild/"/>
-    
-      <category term=".Net" scheme="http://charmcore.com/tags/Net/"/>
     
       <category term="单元测试" scheme="http://charmcore.com/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
     
